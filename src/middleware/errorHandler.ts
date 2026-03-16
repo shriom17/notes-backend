@@ -5,6 +5,8 @@ export class AppError extends Error {
   constructor(message: string, statusCode = 500, code?: string) {
     super(message);
     this.statusCode = statusCode;
-    this.code = code;
+    if (code !== undefined) {
+      this.code = code;
+    }
   }
 }
